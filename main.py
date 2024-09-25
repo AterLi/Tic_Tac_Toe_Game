@@ -17,14 +17,14 @@ while game_start:
     else:
         # Calcul which signe turn is
         if (len(count_steps) - 1) % 2 == 0:
-            signe = "X"
+            sign = "X"
             player_nr = 1
         else:
-            signe = "O"
+            sign = "O"
             player_nr = 2
         try:
             # Show player turn
-            print(f"Player nr. {player_nr} turn with {signe} signe")
+            print(f"Player nr. {player_nr} turn with {sign} signe")
             user_in = int(input("Choose position: "))
             if user_in in count_steps:
                 print("Place already choosen, try again")
@@ -36,10 +36,7 @@ while game_start:
         else:
             # “If the input data from the user doesn’t repeat the chosen step or if the input data is not a character,
             # the game continues.
-            initiate_game.input_signe(user_in, signe)
+            initiate_game.input_signe(user_in, sign)
             # Find the winner and stop the game
-            find_winner = initiate_game.show_winner(signe, player_nr)
+            find_winner = initiate_game.show_winner(sign, player_nr)
             game_start = find_winner
-
-
-
