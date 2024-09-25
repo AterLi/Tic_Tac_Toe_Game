@@ -34,7 +34,10 @@ while game_start:
         except (ValueError, KeyError):
             print("Invalid input, tray again!!!")
         else:
+            # “If the input data from the user doesn’t repeat the chosen step or if the input data is not a character,
+            # the game continues.
             initiate_game.input_signe(user_in, signe)
+            # Find the winner and stop the game
             find_winner = initiate_game.show_winner(signe, player_nr)
             game_start = find_winner
 
